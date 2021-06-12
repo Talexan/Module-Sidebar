@@ -1,0 +1,45 @@
+<div class="block block-custom-sidebar" data-bind="scope: 'customSidebar'" data-role="custom-products-sidebar">
+    <div class="block-title" style="padding-bottom: 20px;">
+        <strong id="block-custom-sidebar-heading" role="heading" aria-level="2"><?= $block->escapeHtml(__('Custom Sidebar')) ?></strong>
+    </div>
+<!-- ko if: customSidebar().length -->
+    <div class="talexan-custom-sidebar" data-bind="css: {'no-display': !customSidebar().length}">
+        <ul id="sidebar-items" class="product-items" data-bind="foreach: customSidebar()">
+            <li class="product-item">
+                <div style="height: 72px; clear: all;">
+                    <div class="container-product-photo" data-bind="style: {'float': 'left', 'margin': '2px', 'height': '64px'}">
+                        <a href="#" class="product-item-photo" data-bind="attr: {href: href}">
+                            <span class="product-image-container" data-bind="html: img"></span>
+                        </a>
+                    </div>
+                    <div class="product-item-details">
+                        <div>
+                            <strong class="product-item-name" data-bind="html: a"></strong>
+                        </div>
+                        <div class="price-box price-final_price" data-role="priceBox" >
+                            <span class="price" data-bind="html: price"></span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+<!-- /ko -->
+<!-- ko ifnot: customSidebar().length -->
+    <div class="empty"><?= $block->escapeHtml(__('Custom sidebar pending items...')) ?></div>
+<!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+    {
+        "[data-role=custom-products-sidebar]": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "customSidebar": {
+                        "component": "Talexan_Sidebar\/js\/custom-sidebar"
+                    }
+                }
+            }
+        }
+
+    }
+</script>

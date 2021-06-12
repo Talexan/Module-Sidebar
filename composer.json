@@ -1,0 +1,36 @@
+{
+    "name": "talexan/module-sidebar",
+    "description": "Test extension for Magento 2",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Talexan",
+            "email": "",
+            "homepage": "",
+            "role": "Beginer"
+        }
+    ],
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "keywords": [
+        "magento 2",
+        "sidebar",
+        "beginer"
+    ],
+    "require": {
+        "php": "~7.3.0||~7.4.0",
+        "magento/framework": "103.0.*",
+	"magento/module-catalog": "104.0.*"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Talexan\\Sidebar\\": ""
+        }
+    }
+}
