@@ -34,7 +34,7 @@ define(['jquery'], function ($) {
          /**
          * Add item into items
          */
-        addItem: (item) => {
+        addItem: function(item) {
             items.push(item);
         },
 
@@ -42,14 +42,14 @@ define(['jquery'], function ($) {
          *  Get property - items
          * @return array item
          */
-        getItems: () => {
+        getItems: function() {
             return items;
         },
 
         /**
          * Clear items
          */
-        clearItems: () => {
+        clearItems: function() {
             items.slice(0);
         }, 
 
