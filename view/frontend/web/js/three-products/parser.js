@@ -12,8 +12,8 @@ define(['jquery'], function ($) {
 
     /**
      * Prepare item
-     * @param array domElement
-     * @return array
+     * @param  Object domElement
+     * @return Object item
      */
     function _prepareItem(domElement) {
         var item = {};
@@ -70,7 +70,7 @@ define(['jquery'], function ($) {
          */
         getItemForSpecifiedProducts: function (specifiedProducts) {
             this.clearItems();
-            specifiedProducts.forEach(product => {
+            specifiedProducts.forEach(function(product) {
                 var item = _prepareItem(product);
                 (item.href)? this.addItem(item): null;
             });
